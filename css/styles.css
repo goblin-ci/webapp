@@ -1,7 +1,9 @@
+body {
+    background-color: #021;
+}
 img.goblin {
     width: 200px;
     margin: 0 auto;
     margin-top: 15%;
     display: block;
-    background-color: #021;
 }
