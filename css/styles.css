@@ -1,9 +1,82 @@
+@font-face {
+    font-family: monaco;
+    src: url(./font/monaco.ttf)
+}
+* {
+     box-sizing: border-box;    
+}
 body {
     background-color: #022;
 }
-img.goblin {
-    width: 200px;
-    margin: 0 auto;
-    margin-top: 15%;
+.center {
     display: block;
+    margin: 0 auto;
+}
+img.goblin {
+    width: 140px;
+    margin-top: 5%;
+    margin-bottom: 30px;
+}
+.build-container {
+    font-family: monaco;
+    max-width: 900px;
+}
+.build-container hgroup {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    font-size: 10px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+}
+.build-container hgroup img.loader {
+    margin: auto;
+    height: 15px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 10px;
+}
+.build-container hgroup h2 {
+    margin: 0 0 5px 0;
+    color: #FFD09E;
+}
+.build-container hgroup small {
+    color: #45822F;
+}
+.build-container hgroup time {
+    color: #F6ED00;
+}
+.build-container article .body {
+    display: none;
+    color: #fff;
+    font-size: 14px;
+    line-height: 16px;
+    background-color: #252525;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.build-container article.active .body {
+    display: block;
+}
+.build-container article.active hgroup {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-color: #555;
+    background-color: #252525;
+}
+.build-container hgroup:hover h2 {
+    color: #bbb;
+}
+.build-container article+article {
+    margin-top: 5px;
+}
+.terminal pre {
+    margin: 0;
 }

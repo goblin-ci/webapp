@@ -34,6 +34,54 @@
     </head>
 
     <body>
-        <img class="goblin" src="./images/goblin-badge.png">
+        <img class="goblin center" src="./images/goblin-badge.png">
+        <div class="terminal center">
+            <section class="build-container center">
+                <article>
+                    <hgroup>
+                        <h2>git clone --depth 10 --branch master https://github.com/aneshas/guinea-pig /go/src/goblin/app</h2>
+                        <small>Completed in </small><time>1 min 30 seconds</time>
+                    </hgroup>
+                    <div class="body">
+                        <pre>Cloning into '/go/src/goblin/app'...</pre>
+                    </div>
+                </article>
+                <article>
+                    <hgroup>
+                        <h2>go get -t -v ./...</h2>
+                        <small>Completed in </small><time>33 seconds</time>
+                    </hgroup>
+                    <div class="body">
+                        <pre>goblin/app</pre>
+                    </div>
+                </article>
+                <article class="active">
+                    <hgroup>
+                        <h2>go test -v -cover ./...</h2>
+                        <small>Completed in </small><time>55 seconds</time>
+                    </hgroup>
+                    <div class="body">
+                        <pre>=== RUN   TestFoo
+--- PASS: TestFoo (0.00s)
+    main_test.go:12: Test passed
+PASS
+coverage: 50.0%!o(MISSING)f statements
+ok      goblin/app  0.002s
+
+BUILD SUCCESSFUL
+                        </pre>
+                    </div>
+                </article>
+                <article>
+                    <hgroup>
+                        <h2>go build</h2>
+                        <img class="loader" src="./images/loader.gif"> 
+                    </hgroup>
+                    <div class="body">
+                    </div>
+                </article>
+            </section>
+            
+        </div>
     </body>
 </html>
