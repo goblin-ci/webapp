@@ -44,6 +44,7 @@ img.goblin {
     color: #FFD09E;
 }
 .build-container hgroup small {
+    font-size: 10px;
     color: #45822F;
 }
 .build-container hgroup time {
