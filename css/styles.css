@@ -6,28 +6,45 @@
      box-sizing: border-box;    
 }
 body {
-    background-color: #022;
+    background-color: #fefefe;
+}
+header.main > div {
+    padding-top: 12px;
+}
+header.main h1, header.main h2 {
+    margin: 0;
+}
+header.main h1 {
+    font-size: 20px;
+}
+header.main h2 {
+    color: #368DAB;
+    font-size: 14px;
+}
+header.main h2 span {
+    color: #375eab;
+}
+.clearfix {
+    clear: both;
 }
 .center {
     display: block;
     margin: 0 auto;
 }
 img.goblin {
-    width: 140px;
-    margin-top: 5%;
+    width: 60px;
     margin-bottom: 30px;
+    margin-right: 10px;
+    float: left;
 }
 .build-container {
     font-family: monaco;
     max-width: 900px;
 }
 .build-container hgroup {
-    background-color: #000;
-    color: #fff;
-    padding: 10px;
+    background-color: #f7f7f7;
+    padding: 15px;
     font-size: 10px;
-    border: 1px solid #fff;
-    border-radius: 3px;
     cursor: pointer;
     position: relative;
 }
@@ -41,14 +58,14 @@ img.goblin {
 }
 .build-container hgroup h2 {
     margin: 0 0 5px 0;
-    color: #FFD09E;
+    color: #020;
 }
 .build-container hgroup small {
     font-size: 10px;
     color: #45822F;
 }
 .build-container hgroup time {
-    color: #F6ED00;
+    color: #F6B400;
 }
 .build-container article .body {
     display: none;
@@ -57,26 +74,30 @@ img.goblin {
     line-height: 16px;
     background-color: #252525;
     padding: 20px;
-    border: 1px solid #eee;
-    border-radius: 3px;
     border-top: none;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
 .build-container article.active .body {
     display: block;
+    border-left: 5px solid green;
 }
 .build-container article.active hgroup {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+    border-bottom: 0;
     border-bottom-color: #555;
-    background-color: #252525;
+    background-color: #f0f0f0;
+    border-left: 5px solid green;
 }
 .build-container hgroup:hover h2 {
     color: #bbb;
 }
 .build-container article+article {
-    margin-top: 5px;
+    margin-top: 10px;
+}
+.terminal {
+    padding-top: 30px;
 }
 .terminal pre {
     margin: 0;

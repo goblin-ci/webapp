@@ -34,9 +34,20 @@
     </head>
 
     <body>
-        <img class="goblin center" src="./images/goblin-badge.png">
+        
         <div class="terminal center">
             <section class="build-container center">
+
+                <header class="main">
+                    <img class="goblin" src="./images/goblin-badge.png">
+                    <div>
+                        <h1>GoblinCI</h1>
+                        <h2><span>Go</span>lang Continuous Intergration</h2>
+                    </div>
+                </header>
+
+                <div class="clearfix"></div>
+
                 <article>
                     <hgroup>
                         <h2>git clone --depth 10 --branch master https://github.com/aneshas/guinea-pig /go/src/goblin/app</h2>
@@ -75,6 +86,7 @@ BUILD SUCCESSFUL
                 <article>
                     <hgroup>
                         <h2>go build</h2>
+                        <!-- TODO - use paper-progress instead -->
                         <img class="loader" src="./images/loader.gif"> 
                     </hgroup>
                     <div class="body">
