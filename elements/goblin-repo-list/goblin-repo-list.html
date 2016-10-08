@@ -1,0 +1,43 @@
+<link rel="import" href="./goblin-repo-item.html">
+
+<dom-module id="goblin-repo-list">
+    <template>
+        <style>
+            goblin-repo-item {
+                margin-bottom: 10px;
+            }
+        </style>
+        <h3 class="repo">Repo list</h3>
+        <template is="dom-repeat" items="{{repos}}">
+            <goblin-repo-item item="{{item}}" on-click="_rowClick"></goblin-repo-item>
+        </template>
+
+    </template>
+    <script>
+        Polymer({
+            is: "goblin-repo-list",
+            properties: {
+                repos: {
+                    type: Array,
+                    value: function() {
+                        return [
+                            {
+                                name: "guinea-pig.git",
+                                active: false
+                            },
+                            {
+                                name: "foobar.git",
+                                active: true,
+                                //build_in_progress: true
+                            }
+                        ];
+                    }
+                }
+            },
+            _rowClick: function() {
+                this.fire("repo-click", {});
+                console.log('clicking reo§');
+            }
+        });
+    </script>
+</dom-module>

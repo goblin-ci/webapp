@@ -1,0 +1,42 @@
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+
+<dom-module id="goblin-main-bar">
+    <template>
+        <style>
+            :host {
+                display: block;
+                width: 100%;
+                padding: 5px;
+            }
+
+            strong {
+                color: #000;
+                font-size: 12px;
+                padding-left: 5px;
+                line-height: 23px;
+            }
+
+            a {
+                float: right;
+                margin-right: 10px;
+                line-height: 18px;
+                display: inline-block;
+                font-size: 12px;
+                text-decoration: underline;
+                color: #000;
+            }
+        </style>
+        <!--
+        <strong>GoblinCI</strong>
+        -->
+        <span class="flex"></span>
+
+        <a href="#">Repos</a>
+
+    </template>
+    <script>
+        Polymer({
+            is: "goblin-main-bar"
+        });
+    </script>
+</dom-module>

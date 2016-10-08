@@ -26,7 +26,13 @@
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
 
+        <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+        <link rel="import" href="./bower_components/polymer/polymer.html">
+        <link rel="import" href="elements/elements.html">
+
         <link rel="stylesheet" href="css/styles.css?v=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
         <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -35,6 +41,8 @@
 
     <body>
         
+        <template is="dom-bind" id="app">
+        <goblin-main-bar></goblin-main-bar>
         <div class="terminal center">
             <section class="build-container center">
 
@@ -48,52 +56,11 @@
 
                 <div class="clearfix"></div>
 
-                <article>
-                    <hgroup>
-                        <h2>git clone --depth 10 --branch master https://github.com/aneshas/guinea-pig /go/src/goblin/app</h2>
-                        <small>Completed in </small><time>1 min 30 seconds</time>
-                    </hgroup>
-                    <div class="body">
-                        <pre>Cloning into '/go/src/goblin/app'...</pre>
-                    </div>
-                </article>
-                <article>
-                    <hgroup>
-                        <h2>go get -t -v ./...</h2>
-                        <small>Completed in </small><time>33 seconds</time>
-                    </hgroup>
-                    <div class="body">
-                        <pre>goblin/app</pre>
-                    </div>
-                </article>
-                <article class="active">
-                    <hgroup>
-                        <h2>go test -v -cover ./...</h2>
-                        <small>Completed in </small><time>55 seconds</time>
-                    </hgroup>
-                    <div class="body">
-                        <pre>=== RUN   TestFoo
---- PASS: TestFoo (0.00s)
-    main_test.go:12: Test passed
-PASS
-coverage: 50.0%!o(MISSING)f statements
-ok      goblin/app  0.002s
+                <goblin-app></goblin-app>
 
-BUILD SUCCESSFUL
-                        </pre>
-                    </div>
-                </article>
-                <article>
-                    <hgroup>
-                        <h2>go build</h2>
-                        <!-- TODO - use paper-progress instead -->
-                        <img class="loader" src="./images/loader.gif"> 
-                    </hgroup>
-                    <div class="body">
-                    </div>
-                </article>
             </section>
             
         </div>
+        </template>
     </body>
 </html>

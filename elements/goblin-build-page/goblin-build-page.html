@@ -1,0 +1,60 @@
+<link rel="import" href="./goblin-build-item.html">
+
+<dom-module id="goblin-build-page">
+    <template>
+        <style>
+            goblin-build-item {
+                margin-bottom: 10px;
+            }
+        </style>
+        <h3 class="repo">guinea-pig.git</h3>
+        <template is="dom-repeat" items="{{jobs}}">
+            <goblin-build-item item="{{item}}"></goblin-build-item>
+        </template>
+
+    </template>
+    <script>
+        Polymer({
+            is: "goblin-build-page",
+            properties: {
+                jobs: {
+                    type: Array,
+                    value: function() {
+                        return [
+                            {
+                                command: "git clone --depth 10 --branch master https://github.com/aneshas/guinea-pig /go/src/goblin/app",
+                                time: "1 min 30 seconds",
+                                output: "Cloning into '/go/src/goblin/app'...",
+                                done: true
+                            },
+                            {
+                                command: "go get -t -v ./...",
+                                time: "1 min 30 seconds",
+                                output: "Getting stuff...",
+                                done: true
+                            },
+                            {
+                                command: "go test -v -cover ./...",
+                                time: "1 min 30 seconds",
+                                output: `=== RUN   TestFoo
+                                --- PASS: TestFoo (0.00s)
+                                main_test.go:12: Test passed
+                                PASS
+                                coverage: 50.0%!o(MISSING)f statements
+                                ok      goblin/app  0.002s
+
+                                BUILD SUCCESSFUL`,
+                                done: true
+                            },
+                            {
+                                command: "go build",
+                                time: "∞",
+                                output: "Building main.go"
+                            }
+                        ];
+                    }
+                }
+            }
+        });
+    </script>
+</dom-module>

@@ -1,0 +1,44 @@
+<link rel="import" href="../../bower_components/iron-collapse/iron-collapse.html">
+<link rel="import" href="../../bower_components/paper-progress/paper-progress.html">
+
+<dom-module id="goblin-build-item">
+    <template>
+        <style>
+            :host {
+                display: block;
+            }
+
+            paper-progress {
+                width: 100%;
+                --paper-progress-active-color: #35BFAB;
+                --paper-progress-secondary-color: #375eab;
+            }
+        </style>
+        <article id="cont">
+        <paper-progress hidden$="{{item.done}}" indeterminate></paper-progress>
+            <hgroup on-click="_rowClick">
+                <h2>{{item.command}}</h2>
+                <small>Completed in </small><time>{{item.time}}</time>
+            </hgroup>
+            <iron-collapse id="collapse">
+                <div class="body">
+                    <pre>{{item.output}}</pre>
+                </div>
+            </iron-collapse>
+        </article>
+    </template>
+    <script>
+        Polymer({
+            is: "goblin-build-item",
+            properties: {
+                item: {
+                    type: Object
+                }
+            },
+            _rowClick: function() {
+                this.$.collapse.toggle();
+                this.$.cont.classList.toggle('active');
+            }
+        });
+    </script>
+</dom-module>

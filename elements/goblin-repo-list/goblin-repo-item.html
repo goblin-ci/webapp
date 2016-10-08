@@ -1,0 +1,45 @@
+<link rel="import" href="../../bower_components/iron-collapse/iron-collapse.html">
+<link rel="import" href="../../bower_components/paper-progress/paper-progress.html">
+<link rel="import" href="../../bower_components/paper-toggle-button/paper-toggle-button.html">
+
+<dom-module id="goblin-repo-item">
+    <template>
+        <style>
+            :host {
+                display: block;
+            }
+
+            paper-progress {
+                width: 100%;
+                --paper-progress-active-color: #35BFAB;
+                --paper-progress-secondary-color: #375eab;
+            }
+
+            paper-toggle-button {
+                position: absolute;
+                right: 0;
+                top: 15px;
+                --paper-toggle-button-checked-button-color: #35BFAB;
+                --paper-toggle-button-checked-bar-color: #35BFAB;
+                --paper-toggle-button-checked-ink-color: #35BFAB;
+            } 
+        </style>
+        <article id="cont">
+        <paper-progress hidden$="{{!item.build_in_progress}}" indeterminate></paper-progress>
+            <hgroup>
+                <h2>{{item.name}}</h2>
+                <paper-toggle-button checked="{{item.active}}"></paper-toggle-button>
+            </hgroup>
+        </article>
+    </template>
+    <script>
+        Polymer({
+            is: "goblin-repo-item",
+            properties: {
+                item: {
+                    type: Object
+                }
+            }
+        });
+    </script>
+</dom-module>

@@ -1,0 +1,33 @@
+<link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../goblin-build-page/goblin-build-page.html">
+<link rel="import" href="../goblin-repo-list/goblin-repo-list.html">
+
+<dom-module id="goblin-app">
+    <template>
+        <iron-pages selected="{{selected}}">
+            <div>
+                <goblin-build-page></goblin-build-page>
+            </div>
+            <div>
+                <goblin-repo-list on-repo-click="_repoClick"></goblin-repo-list>
+            </div>
+        </iron-pages>
+    </template>
+    <script>
+        Polymer({
+            is: "goblin-app",
+            properties: {
+                selected: {
+                    type: Number,
+                    value: 1,
+                    notify: true
+                }
+            },
+
+            _repoClick: function(e) {
+                this.set("selected", 1);
+                // TODO - Set selected repo
+            }
+        });
+    </script>
+</dom-module>
